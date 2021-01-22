@@ -54,10 +54,15 @@ class Item implements ItemInterface
 
     private static $template;
 
+    /**
+     * @var string
+     */
+    private $image;
+
     public function __construct(
         string $title, string $fileUrl, string $duration,
         string $description, int $publishDate, int $fileSizeBytes,
-        string $mime, ?string $guid = null, ?string $link = null
+        string $mime, string $image, ?string $guid = null, ?string $link = null
     ) {
         $this->title = $this->escape($title);
         $this->fileUrl = $fileUrl;
@@ -66,6 +71,7 @@ class Item implements ItemInterface
         $this->publishDate = date('r', $publishDate);
         $this->fileSizeBytes = $fileSizeBytes;
         $this->mime = $mime;
+        $this->image = $image;
         $this->guid = $guid ?: $this->fileUrl;
         $this->link = $link ?: $this->fileUrl;
 

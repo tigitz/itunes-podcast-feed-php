@@ -6,6 +6,7 @@
 
     <description>{{description}}</description>
     <itunes:description>{{description}}</itunes:description>
+    <itunes:image href="{{image}}" />
     <pubDate>{{publishDate}}</pubDate>
 
     <enclosure url="{{fileUrl}}" length="{{fileSizeBytes}}" type="{{mime}}" />
